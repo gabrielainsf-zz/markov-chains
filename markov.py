@@ -5,17 +5,13 @@ from random import choice
 
 def open_and_read_file(file_path):
     """Take file path as string; return text as string.
-	
+    
     Takes a string that is a file path, opens the file, and turns
     the file's contents as one string of text.
     """
-    open_file = open(file_path)
-    read_file = open_file.read()
-    #file = file_path.read_text()
-    print(read_file)
-    # your code goes here
+    read_file = open(file_path).read()
 
-    return "Contents of your file as one long string"
+    return read_file
 
 
 def make_chains(text_string):
@@ -42,8 +38,26 @@ def make_chains(text_string):
         >>> chains[('there','juanita')]
         [None]
     """
+    words = text_string.split()
+    #print(words)
 
     chains = {}
+
+    for i in range(len(words)+2):
+        new_tuple = tuple([words[i], words[i+2]])
+            
+        if new_tuple in chains:
+            chains[new_tuple].append(words[i+2])
+        else:
+            chains[new_tuple] = [words[i+2]]
+
+    
+
+        #print(word)
+        #print(new_tuple)
+        print(chains)
+
+        #print(new_tuple)
 
     # your code goes here
 
