@@ -39,27 +39,25 @@ def make_chains(text_string):
         [None]
     """
     words = text_string.split()
-    #print(words)
 
     chains = {}
 
-    for i in range(len(words)+2):
-        new_tuple = tuple([words[i], words[i+2]])
-            
+    for i in range(len(words) - 1):
+     
+        new_tuple = tuple([words[i], words[i+1]])
+     
         if new_tuple in chains:
+            if new_tuple == tuple([words[-2], words[-1]]):
+                chains[new_tuple] = None
+                break
             chains[new_tuple].append(words[i+2])
         else:
+            if new_tuple == tuple([words[-2], words[-1]]):
+                chains[new_tuple] = None
+                break
             chains[new_tuple] = [words[i+2]]
 
-    
-
-        #print(word)
-        #print(new_tuple)
-        print(chains)
-
-        #print(new_tuple)
-
-    # your code goes here
+    print(chains)
 
     return chains
 
