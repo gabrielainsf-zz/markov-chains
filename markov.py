@@ -64,8 +64,38 @@ def make_chains(text_string):
 
 def make_text(chains):
     """Return text from chains."""
+    import random 
+
+    # for key in chains:
+    #     link = random.choice(key)
+    
+    # print(link)
 
     words = []
+    # chains.keys(), choose random key from chains for initial value
+
+    # loop for appending to words list
+    # for every tuple [0] [1]
+    # append [0] + [1] (or index [0])
+
+    # create new tuple from index [1] and randomly chosen value from list
+    # chains[new_tuple]
+
+#TODO
+#QUESTION
+#
+
+#we want to pick a random key from the dict that is a tuple, so we know where to start
+#from tuple, add index[0] to a list, then use index[1] and value to make a "new tuple"
+#value should be "random"
+#use that new tuple to find the next tuple randomly and do the same thing, adding index [0] to list
+#using index[1] to find the next tuple
+
+#will end when hits "None," so length of randomly generated list  will vary
+#hint: while loop? ask for clarification if needed
+
+
+
 
     # your code goes here
 
