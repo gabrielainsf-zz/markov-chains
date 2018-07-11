@@ -57,14 +57,15 @@ def make_chains(text_string):
                 break
             chains[new_tuple] = [words[i+2]]
 
-    print(chains)
+    # print(chains)
+
 
     return chains
 
 
 def make_text(chains):
     """Return text from chains."""
-    import random 
+    import random
 
     # for key in chains:
     #     link = random.choice(key)
@@ -80,6 +81,20 @@ def make_text(chains):
 
     # create new tuple from index [1] and randomly chosen value from list
     # chains[new_tuple]
+
+    # print(chains.values())
+    random_tuple = random.choice(list(chains.keys()))
+
+    while chains[random_tuple] != None:
+        words.append(random_tuple[0])
+        chosen_value = random.choice(chains[random_tuple])
+        random_tuple = (random_tuple[1], chosen_value)
+    
+    words.extend(random_tuple)
+
+    # random_tuple = random_tuple.choice()
+      #  print(random_tuple)
+       # print(words)
 
 #TODO
 #QUESTION
